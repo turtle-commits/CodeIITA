@@ -1,0 +1,23 @@
+<%- include("partials/header"); %>
+<%- include("partials/sidenavpush"); %>
+
+<a href="/">Back</a><br>
+
+
+<% Object.keys(result2).forEach(function(key){ %>
+<% var row = result2[key]; %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <iframe width="120%" height="70%" src="<%=row.link%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+
+<% }); %>
+
+<%- include("partials/sidenavpushjs"); %>
+<%- include("partials/footer"); %>

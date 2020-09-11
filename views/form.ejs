@@ -1,0 +1,41 @@
+<%- include("partials/header"); %>
+<div class="container">
+    <form method="POST" action="/superuser">
+        <div class="form-group">
+            Title
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="title" placeholder="Title">
+        </div>
+        <div class="form-group">
+            Link
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="link" placeholder="Link">
+        </div>
+        <div class="form-group">
+            Likes
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="likes" value="0" placeholder="Likes">
+        </div>
+        <div class="form-group">
+            Section
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="section">
+                <option value="webdev-nodejs">Web Development - NodeJS</option>
+                <option value="webdev-react">Web Development - React</option>
+                <option value="data_structures">Data Structures</option>
+                <option value="algorithms">Algorithms</option>
+            </select>
+        </div>
+        <input type="submit">
+    </form>
+</div>
+
+<%- include("partials/footer"); %>
+
+
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/yEHCfRWz-EI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
