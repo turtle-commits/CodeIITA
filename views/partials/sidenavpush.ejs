@@ -53,7 +53,7 @@
     <% Object.keys(result1).forEach(function(key){ %>
     <% var row = result1[key]; %>
         
-        <a href="/<%= row.section %>/<%= row.id %>"><%= row.title %></a>
+        <a href="/<%= row.section %>/<%= row.embedded %>"><%= row.title %></a>
         
     <% }); %>
 

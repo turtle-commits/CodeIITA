@@ -1,0 +1,74 @@
+<%- include("partials/header"); %>
+
+<div class="jumbotron">
+    <h1>Add a new blog</h1>
+</div>
+                <button class="tablink" onclick="openPage('Medicine', this, '#009999')"><h2>Enter blog manually</h2></button>
+                <button class="tablink" onclick="openPage('Company', this, '#006666')" id="defaultOpen"><h2>Use a Link</h2></button>
+                <div id="Medicine" class="tabcontent">
+                    <div class="search-container">
+                        <form method="POST" action="/add_blogs">
+                            <input type="text" name="type" value="written" hidden>
+                            <div class="form-group">
+                                Title of the blog
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="title" placeholder="title">
+                            </div>
+                            <div class="form-group">
+                                Link of pic
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="piclink" placeholder="Picture's link">
+                            </div>
+                            <div class="form-group">
+                                Body of the blog
+                            </div>
+                            <div class="form-group">
+                                <textarea  type="text" name="body" rows="20" cols="200" placeholder="body"></textarea>
+                            </div>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+                <div id="Company" class="tabcontent">
+                    <h2>Write a blog using a link</h2>
+                    <div class="search-container">
+                        <form action="/add_blogs" method="POST">
+                            <input type="text" name="type" value="link" hidden>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="title" placeholder="Title">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="link" placeholder="Link to a pdf file preferably in Google Drive">
+                            </div>
+                            <div class="form-group">
+                                <textarea  type="text" name="body" rows="10" cols="200" placeholder="Small Intro"></textarea>
+                            </div>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+
+
+
+<script>
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+
+<%- include("partials/footer"); %>

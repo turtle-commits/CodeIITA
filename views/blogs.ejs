@@ -1,0 +1,9 @@
+<%- include("partials/header"); %>
+
+<% Object.keys(blogs).forEach(function(key){ %>
+<% var row = blogs[key]; %>
+
+<h1><a href="/blogs/<%= row.id %>"><%= row.title %> </a></h1>
+
+<% }); %>
+<%- include("partials/footer"); %>
