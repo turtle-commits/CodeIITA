@@ -1,25 +1,37 @@
 <%- include("partials/header"); %>
 
 <% Object.keys(blog).forEach(function(key){ %>
-<% var blg = blog[key]; %>
+<% var blg = blog[key]; var q=blg.title;%>
 <div class="container">
     <div class="row">
         <div class="col-md-2">
             <div style="position: fixed;">
-                <p>Likes : <%=blg.likes %></p>
+                <p>Likes :<a href="/blogs/<%= blg.id %>/like"><%=blg.likes %></a></p>
                 <p>Author : <%=blg.author %></p>
+                <p id="innerhtml"><%= blg.innerhtml %></p>
             </div>
         </div>
         <div class="col-md-8">
             <h1><%= blg.title %></h1>
             <br><br><br>
-            
-            <p><%= blg.body %></p>
+            <p id="blog_body"><%= blg.body %></p>
         </div>
         <div class="col-md-2"></div>
     </div>
 </div>
 
 <% }); %>
+</body>
+<script type="text/javascript">
+var q=document.getElementById("innerhtml");
+var cv=document.getElementById("blog_body");
 
-<%- include("partials/footer"); %>
+console.log("Hey there");
+
+var mind=q.innerHTML;
+q.textContent="";
+if(mind=='true'){
+    cv.innerHTML=cv.textContent;
+}
+</script>
+</html>

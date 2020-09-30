@@ -30,9 +30,13 @@
                 <li><a id="" href="#">Blog Section</a></li>
             </div>
             <div class="nav navbar-nav navbar-right">
-                
-                
-               
+                <% if(user==''){ %>
+                    <li><a href="#">Sign-in</a></li>
+                    <li><a href="#">Sign-up</a></li>
+                <% } else{ %>
+                    <li><a>Welcome, <b><%=user%></b></a></li>
+                    <li><a href="#">Sign-out</a></li>
+                <% } %>
             </div>
             </div>
         </div>

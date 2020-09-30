@@ -1,9 +1,29 @@
 <%- include("partials/header"); %>
+<style>
+.border-side{
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 40px auto 5px auto;
+}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="border-side">
+            <h1 style="text-align: center;font-weight: 700;text-decoration: underline;">Blogs</h1>
+            <% Object.keys(blogs).forEach(function(key){ %>
+                <% var row = blogs[key]; %>
+                
+                <p style="text-align: left; font-size: 20px;font-weight: 700;"><a style="color: black;" href="/blogs/<%= row.id %>"><%= row.title %> </a></p>
+                
+            <% }); %>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
 
-<% Object.keys(blogs).forEach(function(key){ %>
-<% var row = blogs[key]; %>
 
-<h1><a href="/blogs/<%= row.id %>"><%= row.title %> </a></h1>
-
-<% }); %>
 <%- include("partials/footer"); %>

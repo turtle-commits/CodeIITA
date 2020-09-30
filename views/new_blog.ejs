@@ -9,6 +9,7 @@
                     <div class="search-container">
                         <form method="POST" action="/add_blogs">
                             <input type="text" name="type" value="written" hidden>
+                            <input type="text" name="author" value="<%= user %>" hidden>
                             <div class="form-group">
                                 Title of the blog
                             </div>
@@ -20,6 +21,11 @@
                             </div>
                             <div class="form-group">
                                 <input class="form-control" type="text" name="piclink" placeholder="Picture's link">
+                            </div>
+                            <div class="form-group">
+                                <p>Write Blog in HTML form</p>
+                                <input type="radio" name="innerhtml" value="true"> YES
+                                <input type="radio" name="innerhtml" value="false"> NO
                             </div>
                             <div class="form-group">
                                 Body of the blog
@@ -36,6 +42,7 @@
                     <div class="search-container">
                         <form action="/add_blogs" method="POST">
                             <input type="text" name="type" value="link" hidden>
+                            <input type="text" name="author" value="<%= user %>" hidden>
                             <div class="form-group">
                                 <input class="form-control" type="text" name="title" placeholder="Title">
                             </div>
